@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediTruth: Your Trusted Source for Accurate Health Information</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <h1>MediTruth</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#verify">Verify Information</a></li>
+                    <li><a href="#alerts">Misinformation Alerts</a></li>
+                    <li><a href="#education">Health Education</a></li>
+                    <li><a href="#community">Community</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="language-selector">
+                <select id="language">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="ta">தமிழ்</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Trusted Source for Accurate Health Information</h1>
+                <p>Combating health misinformation in rural communities through AI-powered fact checking and education.</p>
+                <div class="search-box">
+                    <input type="text" placeholder="Search health topics or verify information...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#verify" class="btn primary">Verify Health Claim</a>
+                    <a href="#alerts" class="btn secondary">View Latest Alerts</a>
+                </div>
+            </div>
+        
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">How MediTruth Helps You</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Verified Health Information</h3>
+                    <p>Evidence-based guidelines on topics like hygiene, vaccinations, maternal care, and nutrition.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-search"></i></div>
+                    <h3>Misinformation Detection</h3>
+                    <p>Identify and highlight popular health myths circulating on social media and local news.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-book-medical"></i></div>
+                    <h3>Health Education</h3>
+                    <p>Practical advice on preventing diseases like malaria, diabetes, and thyroid issues.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <h3>Community Support</h3>
+                    <p>Connect with healthcare professionals and community members for reliable information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="verify" class="verify-section">
+        <div class="container">
+            <h2 class="section-title">Verify Health Information</h2>
+            <div class="verify-container">
+                <div class="verify-text">
+                    <p>Have you heard a health claim that sounds suspicious? Let our AI fact-check it for you.</p>
+                    <ul class="verify-examples">
+                        <li><i class="fas fa-quote-left"></i> Drinking turmeric water daily boosts immunity</li>
+                        <li><i class="fas fa-quote-left"></i> Vaccines cause infertility</li>
+                        <li><i class="fas fa-quote-left"></i> Garlic cures COVID-19</li>
+                    </ul>
+                </div>
+                <div class="verify-form">
+                    <textarea placeholder="Enter the health claim you want to verify..."></textarea>
+                    <div class="verify-options">
+                        <div class="verify-source">
+                            <label>Where did you hear this?</label>
+                            <select>
+                                <option>Social media</option>
+                                <option>Friends or family</option>
+                                <option>Local healer</option>
+                                <option>News/TV</option>
+                                <option>Other source</option>
+                            </select>
+                        </div>
+                        <button class="btn primary" id="verify-btn">Verify Now</button>
+                    </div>
+                </div>
+                <div class="verification-result" id="verification-result">
+                    <!-- Results will appear here via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="alerts" class="alerts-section">
+        <div class="container">
+            <h2 class="section-title">Misinformation Alerts</h2>
+            <p class="section-description">Stay informed about trending health misinformation relevant to your age group</p>
+            
+            <div class="age-selector">
+                <h3>Filter information by age group</h3>
+                <div class="age-options">
+                    <div class="age-option">
+                        <input type="radio" id="age-all" name="age-group" value="all" checked>
+                        <label for="age-all">All Ages</label>
+                    </div>
+                    <div class="age-option">
+                        <input type="radio" id="age-infant" name="age-group" value="infant">
+                        <label for="age-infant">Infants (0-2 years)</label>
+                    </div>
+                    <div class="age-option">
+                        <input type="radio" id="age-child" name="age-group" value="child">
+                        <label for="age-child">Children (3-12 years)</label>
+                    </div>
+                    <div class="age-option">
+                        <input type="radio" id="age-teen" name="age-group" value="teen">
+                        <label for="age-teen">Teens (13-19 years)</label>
+                    </div>
+                    <div class="age-option">
+                        <input type="radio" id="age-young-adult" name="age-group" value="young-adult">
+                        <label for="age-young-adult">Young Adults (20-35 years)</label>
+                    </div>
+                    <div class="age-option">
+                        <input type="radio" id="age-middle-adult" name="age-group" value="middle-adult">
+                        <label for="age-middle-adult">Middle-aged Adults (36-59 years)</label>
+                    </div>
+                    <div class="age-option">
+                        <input type="radio" id="age-senior" name="age-group" value="senior">
+                        <label for="age-senior">Seniors (60+ years)</label>
+                    </div>
+                </div>
+                
+                <div class="age-specific-concerns">
+                    <h4>Common health concerns for selected age group:</h4>
+                    <ul id="age-concerns-list">
+                        <!-- This list will be dynamically populated based on age selection -->
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="alerts-container" id="alerts-container">
+                <!-- Alert items will be populated via JavaScript -->
+                <div class="alert-item">
+                    <div class="alert-icon warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="alert-content">
+                        <h3>MYTH: Herbal teas can cure diabetes completely</h3>
+                        <p class="alert-description">This claim is circulating on social media and targets middle-aged adults. While some herbal teas may help manage blood sugar levels as part of a comprehensive treatment plan, they cannot cure diabetes.</p>
+                        <div class="alert-facts">
+                            <h4>FACT CHECK:</h4>
+                            <p>Diabetes requires medical management including medication, diet, and lifestyle changes. Consult healthcare providers before using any alternative treatments.</p>
+                        </div>
+                        <div class="alert-metadata">
+                            <span class="alert-date">Trending since: March 15, 2025</span>
+                            <span class="alert-age-groups">Relevant for: Adults 36-59, Seniors 60+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="report-misinformation">
+                <h3>Spotted age-specific health misinformation?</h3>
+                <p>Help your community by reporting it to our fact-checking team.</p>
+                <button class="btn secondary" id="report-btn">Report Misinformation</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2 class="section-title">Health Education Resources</h2>
+            
+            <div class="education-filters">
+                <div class="filter-age">
+                    <label for="education-age">Filter by age group:</label>
+                    <select id="education-age">
+                        <option value="all">All Ages</option>
+                        <option value="infant">Infants (0-2 years)</option>
+                        <option value="child">Children (3-12 years)</option>
+                        <option value="teen">Teens (13-19 years)</option>
+                        <option value="young-adult">Young Adults (20-35 years)</option>
+                        <option value="middle-adult">Middle-aged Adults (36-59 years)</option>
+                        <option value="senior">Seniors (60+ years)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="education-tabs">
+                <button class="tab-btn active" data-tab="prevention">Prevention Tips</button>
+    
+                <button class="tab-btn" data-tab="nutrition">Nutrition</button>
+                <button class="tab-btn" data-tab="hygiene">Hygiene</button>
+                <button class="tab-btn" data-tab="traditional">Traditional Practices</button>
+                <button class="tab-btn" data-tab="age-specific">Age-Specific Care</button>
+            </div>
+            
+            <div class="tab-content active" id="prevention">
+                <h3>Disease Prevention Tips</h3>
+                <div class="education-cards">
+                    <div class="education-card">
+                        <img src="/api/placeholder/300/200" alt="Malaria prevention">
+                        <h4>Malaria Prevention</h4>
+                        <p>Learn how to protect yourself and your family from malaria with these simple steps.</p>
+                        <span class="age-tag">All Ages</span>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                    <div class="education-card">
+                        <img src="/api/placeholder/300/200" alt="Diabetes management">
+                        <h4>Diabetes Management</h4>
+                        <p>Early signs, prevention tips, and managing diabetes in rural settings.</p>
+                        <span class="age-tag">Adults 36+</span>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                    <div class="education-card">
+                        <img src="/api/placeholder/300/200" alt="COVID-19 facts">
+                        <h4>COVID-19 Facts</h4>
+                        <p>What you need to know about COVID-19 prevention, symptoms, and vaccines.</p>
+                        <span class="age-tag">All Ages</span>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Other tab contents would be similar but with different content -->
+            <div class="tab-content" id="maternal">
+                <!-- Maternal health content -->
+                <h3>Maternal Health</h3>
+                <p>Content about maternal health will appear here.</p>
+            </div>
+            
+            <!-- New Age-Specific tab content -->
+            <div class="tab-content" id="age-specific">
+                <h3>Age-Specific Health Information</h3>
+                <div class="age-specific-content">
+                    <div class="age-category">
+                        <h4><i class="fas fa-baby"></i> Infants (0-2 years)</h4>
+                        <div class="education-cards">
+                            <div class="education-card">
+                                <img src="/api/placeholder/300/200" alt="Infant vaccination">
+                                <h4>Vaccination Schedule</h4>
+                                <p>Essential vaccines for your child's first two years of life.</p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
+                            <div class="education-card">
+                                <img src="/api/placeholder/300/200" alt="Infant nutrition">
+                                <h4>Infant Nutrition</h4>
+                                <p>Proper feeding practices from breastfeeding to solid foods.</p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="age-category">
+                        <h4><i class="fas fa-child"></i> Children (3-12 years)</h4>
+                        <!-- Similar structure for child content -->
+                    </div>
+                    
+                    <!-- Additional age categories would follow the same pattern -->
+                </div>
+            </div>
+            
+            <!-- Additional tab contents -->
+        </div>
+    </section>
+
+    <section id="community" class="community-section">
+        <div class="container">
+            <h2 class="section-title">Community Support</h2>
+            
+            <div class="community-features">
+                <div class="community-feature">
+                    <i class="fas fa-comments"></i>
+                    <h3>Discussion Forums</h3>
+                    <p>Connect with community members and discuss health topics that matter to you.</p>
+                    <div class="forum-categories">
+                        <span class="forum-category">By Age Group</span>
+                        <span class="forum-category">By Health Condition</span>
+                    </div>
+                    <a href="#" class="btn secondary">Join Discussion</a>
+                </div>
+                
+                <div class="community-feature">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Ask a Health Expert</h3>
+                    <p>Submit your questions to be answered by verified healthcare professionals.</p>
+                    <a href="#" class="btn secondary">Ask Question</a>
+                </div>
+                
+                <div class="community-feature">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Local Health Services</h3>
+                    <p>Find verified health services, clinics, and healthcare workers near you.</p>
+                    <a href="#" class="btn secondary">Find Services</a>
+                </div>
+            </div>
+            
+            <div class="testimonials">
+                <h3>Community Voices</h3>
+                <div class="testimonial-slider" id="testimonial-slider">
+                    <!-- Testimonials will be added via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <h2>MediTruth</h2>
+                    </div>
+                    <p>Your trusted source for accurate health information in rural communities.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#verify">Verify Information</a></li>
+                        <li><a href="#alerts">Misinformation Alerts</a></li>
+                        <li><a href="#education">Health Education</a></li>
+                        <li><a href="#community">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@meditruth.org</p>
+                    <p><i class="fas fa-phone"></i>+91 7984834239</p>
+                    <div class="social-media">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-app">
+                    <h3>Download Our App</h3>
+                    <p>Get health facts on the go, even without internet!</p>
+                    <div class="app-buttons">
+                        <a href="#" class="app-btn"><i class="fab fa-google-play"></i> Google Play</a>
+                        <a href="#" class="app-btn"><i class="fab fa-apple"></i> App Store</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 MediTruth. All rights reserved.</p>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Data Sources</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="chat-widget" id="chat-widget">
+        <div class="chat-header">
+            <i class="fas fa-robot"></i>
+            <h3>MediTruth AI Assistant</h3>
+            <button id="close-chat"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot">
+                <p>Hi there! I'm your MediTruth health assistant. Ask me any health question, or let me fact-check information for you.</p>
+            </div>
+            <div class="message bot">
+                <p>If you'd like, I can provide age-specific health information. Just let me know which age group you're interested in!</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-message" placeholder="Type your health question...">
+            <button id="send-message"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    
+    <button class="chat-toggle" id="chat-toggle">
+        <i class="fas fa-comment-medical"></i>
+        <span>Health Assistant</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
